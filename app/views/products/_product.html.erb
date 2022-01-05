@@ -1,10 +1,16 @@
 <article class="product">
+  <%if product.quantity == 0%>
+    <aside class = "soldout">
+    Sold out
+  </aside>
+  <%end%>
   <header>
     <%= link_to product do %>
       <%= image_tag product.image.thumb, alt: product.name %>
       <h4><%= product.name %></h4>
     <% end %>
   </header>
+  <h4>quantity left: <%= product.quantity%></h4>
   <p class="description">
     <%= product.description %>
   </p>
