@@ -1,2 +1,9 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin Dashboard</h1>
+<div class="alert alert-success" role="alert">
+<h3>Total Products on the website: <%= @products.count%></h3>
+<h3> Link to products: <%= link_to 'Products',  [:admin, :products] %></h3>
+<h3>Total Categories on the website: <%= @categories.count%></h3>
+<h3> Link to categories: <% Category.all.each do |category| %>
+              <li><%= link_to category.name, category %></li>
+            <% end %></h3>
+</div>
